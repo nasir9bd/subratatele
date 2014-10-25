@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="employee">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+</head>
+<body ng-controller="manage_employee">
+<form ng-submit="add_employee()">
+    <div>
+        <label>Employee Name</label>
+        <input type="text" ng-model="employee_name"/>
+    </div>
+    <div>
+        <label>Cell No</label>
+        <input type="text" ng-model="employee_cell"/>
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="text" ng-model="employee_email"/>
+    </div>
+    <div>
+        <label>Address</label>
+        <input type="text" ng-model="employee_address"/>
+    </div>
+    <input type="submit" value="Add Employee"/>
+</form>
+
+<script src="../js/angular.min.js"></script>
+<script src="../js/subratatele.js"></script>
+</body>
+</html>

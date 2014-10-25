@@ -1,3 +1,25 @@
+var employee = angular.module('employee', []);
+
+employee.controller('manage_employee', function ($scope, $http) {
+    $scope.add_employee = function () {
+        var employee_input = {
+            'emp_name' : $scope.employee_name,
+            'emp_cell' : $scope.employee_cell,
+            'emp_email' : $scope.employee_email,
+            'emp_address' : $scope.employee_address
+        };
+        $http.post('../http/addemployee.php', employee_input)
+            .success(function (data, status) {
+                $scope.employeeaddresult = data;
+            })
+            .error();
+
+        alert(employeeaddresult);
+
+    }
+});
+
+
 var customer = angular.module('customer', []);
 
 customer.controller('addcustomer', function ($scope, $http) {
