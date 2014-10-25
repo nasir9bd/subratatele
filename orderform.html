@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" ng-app="order">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+</head>
+<body ng-controller="placeorder">
+    <div>
+        <input type="text" ng-model="cus_cell"/>
+        <button ng-click="search_customer()">Search Customer</button>
+    </div>
+    <div>
+        <input type="text" ng-model="customer.cus_name"/>
+        <input type="text" ng-model="customer.cus_cell"/>
+        <input type="text" ng-model="customer.cus_email"/>
+        <input type="text" ng-model="customer.cus_address"/>
+
+
+    </div>
+    <div>
+        <input type="checkbox"/>Software<input type="checkbox"/>Hardware
+    </div>
+    <div>
+        <label>Problem Details</label>
+        <input type="textarea"/>
+    </div>
+    <div>
+        <input type="checkbox"/>With Charger<input type="checkbox"/>With Batterey<input type="checkbox"/>With MMC<input type="checkbox"/>With SIM Card
+    </div>
+    <div>
+        <label>Bill</label>
+        <input type="text" placeholder="estimated"/>
+        <input type="text" placeholder="paid"/>
+        <input type="text" placeholder="due" disabled />
+    </div>
+    <div>
+        <label>Payment type</label>
+        <select name=""></select>
+    </div>
+    <div>
+        <label>Receiver</label>
+        <select name=""></select>
+    </div>
+    <button>Submit Order</button>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/subratatele.js"></script>
+
+</body>
+</html>
