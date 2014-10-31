@@ -11,38 +11,49 @@
         <button ng-click="search_customer()">Search Customer</button>
     </div>
     <div>
+
         <input type="text" ng-model="customer.cus_name"/>
         <input type="text" ng-model="customer.cus_cell"/>
         <input type="text" ng-model="customer.cus_email"/>
         <input type="text" ng-model="customer.cus_address"/>
+    </div>
+    <form ng-submit="place_order()">
+        Cusotomer ID: <span ng-model="customer.id">{{customer.id}}</span>
+        <div>
+            <input type="checkbox" ng-model="software" ng-true-value=1 ng-false-value=0 />Software
+            <input type="checkbox" ng-model="hardware" ng-true-value=1 ng-false-value=0 />Hardware
+        </div>
+        <div>
+            <label>Problem Details</label>
+            <input type="textarea" ng-model="phone_problem"/>
+        </div>
+        <div>
+            <input type="checkbox" ng-model="with_charger" ng-true-value=1 ng-false-value=0 />With Charger
+            <input type="checkbox" ng-model="with_battery" ng-true-value=1 ng-false-value=0  />With Batterey
+            <input type="checkbox" ng-model="with_mmc" ng-true-value=1 ng-false-value=0 />With MMC
+            <input type="checkbox" ng-model="with_simcard" ng-true-value=1 ng-false-value=0 />With SIM Card
+        </div>
+        <div>
+            <label>Bill</label>
+            <input type="text" placeholder="estimated" ng-model="bill_estimated"/>
+            <input type="text" placeholder="paid" ng-model="bill_paid"/>
+            <span ng-model="bill_due">Due {{bill_estimated - bill_paid}}</span>
+        </div>
+        <div>
+            <label>Payment type</label>
+            <select ng-model="payment_id">
+                <option ng-repeat="payment in payment_types" value="{{payment.id}}">{{payment.payment_type}}</option>
+            </select>
+        </div>
+        <div>
+            <label>Receiver</label>
+            <select ng-model="employee_id">
+                <option ng-repeat="emp in employee" value="{{emp.id}}">{{emp.emp_name}}</option>
+            </select>
+        </div>
+        <button>Submit Order</button>
+    </form>
 
-
-    </div>
-    <div>
-        <input type="checkbox"/>Software<input type="checkbox"/>Hardware
-    </div>
-    <div>
-        <label>Problem Details</label>
-        <input type="textarea"/>
-    </div>
-    <div>
-        <input type="checkbox"/>With Charger<input type="checkbox"/>With Batterey<input type="checkbox"/>With MMC<input type="checkbox"/>With SIM Card
-    </div>
-    <div>
-        <label>Bill</label>
-        <input type="text" placeholder="estimated"/>
-        <input type="text" placeholder="paid"/>
-        <input type="text" placeholder="due" disabled />
-    </div>
-    <div>
-        <label>Payment type</label>
-        <select name=""></select>
-    </div>
-    <div>
-        <label>Receiver</label>
-        <select name=""></select>
-    </div>
-    <button>Submit Order</button>
 
     <script src="js/angular.min.js"></script>
     <script src="js/subratatele.js"></script>

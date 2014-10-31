@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="payment">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Payment</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+</head>
+<body ng-controller="payment_controller">
+
+<form ng-submit="add_payment_method()">
+    <input ng-model="payment_type">
+    <button type="submit">Add Payment Method</button>
+</form>
+
+
+<script src="../js/angular.min.js"></script>
+<script src="../js/subratatele.js"></script>
+</body>
+</html>
